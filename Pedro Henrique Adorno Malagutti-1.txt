@@ -1,0 +1,33 @@
+class HistoricoNavegacao:
+    def __init__(self):
+        self.pilha = []
+
+    def visitar_pagina(self, url):
+        self.pilha.append(url)
+
+    def voltar(self):
+        if self.pilha:
+            return self.pilha.pop()
+        else:
+            return "Não há mais páginas para voltar."
+
+    def exibir_historico(self):
+        for url in reversed(self.pilha):
+            print(url)
+
+    def pagina_atual(self):
+        if self.pilha:
+            return self.pilha[-1]
+        else:
+            return "Nenhuma página no momento."
+
+
+h = HistoricoNavegacao()
+h.visitar_pagina("google.com")
+h.visitar_pagina("openai.com")
+h.visitar_pagina("github.com")
+print("Página atual:", h.pagina_atual())
+print("Voltando para:", h.voltar())
+print("Página atual:", h.pagina_atual())
+print("Histórico:")
+h.exibir_historico()
