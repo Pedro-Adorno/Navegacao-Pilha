@@ -24,7 +24,7 @@ class HistoricoNavegacao:
 
 h = HistoricoNavegacao()
 h.visitar_pagina("google.com")
-h.visitar_pagina("openai.com")
+h.visitar_pagina("fatec.com")
 h.visitar_pagina("github.com")
 print("Página atual:", h.pagina_atual())
 print("Voltando para:", h.voltar())
